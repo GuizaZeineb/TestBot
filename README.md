@@ -1,42 +1,26 @@
-# echo_bot
+# Chatbot with Azure Bot Framework
 
-A bot that echoes back user response
+# Introduction
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+Ce projet est une MVP chatbot pour la réservation de voyage.
 
-## Prerequisites
+Son objectif c'est de permettre de détecter les entités de language suivantes: 
+- Ville de départ et de destination
+- Dates d'aller et retour
+- Budget maximum
 
-This sample **requires** prerequisites in order to run.
-
-### Install Python 3.6
-
-## Running the sample
-- Run `pip install -r requirements.txt` to install all dependencies
-- Run `python app.py`
+Le chatbot est développé en tant que dialogue en cascade,  c'est à dire que le dalogue est sequentiel et que le bot va poser des questions à l’utilisateur afin de comprendre sa demande. Tant que l'information nécessaire n'est pas disponible au bot, il réitère sa question. Quand il pense avoir compris toutes les briques nécessaires, il refolrmule la demande et demande une confirmation à l'utilisateur.
 
 
-## Testing the bot using Bot Framework Emulator
+# Architecture du projet
 
-[Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
+L'ensemble du projet est développer sur Azure donc pour consommer ce git il faut avoir un compte Azure et Github.
 
-- Install the Bot Framework Emulator version 4.3.0 or greater from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
+pour plus de détails sur l'utilisation de Microsoft Azure voir:
+1. [LUIS AI reconnaissance de texte](https://docs.microsoft.com/fr-fr/azure/cognitive-services/luis/)
+2. [Bot Framework](https://docs.microsoft.com/fr-fr/azure/bot-service/index-bf-sdk?view=azure-bot-service-4.0)
+3. [App Insight pour le suivi de performances](https://docs.microsoft.com/fr-fr/azure/azure-monitor/app/app-insights-overview)
 
-### Connect to the bot using Bot Framework Emulator
+## Déploiement 
 
-- Launch Bot Framework Emulator
-- Enter a Bot URL of `http://localhost:3978/api/messages`
-
-
-## Further reading
-
-- [Bot Framework Documentation](https://docs.botframework.com)
-- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
-- [Dialogs](https://docs.microsoft.com/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0)
-- [Gathering Input Using Prompts](https://docs.microsoft.com/azure/bot-service/bot-builder-prompts?view=azure-bot-service-4.0&tabs=csharp)
-- [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0)
-- [Azure Bot Service Introduction](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
-- [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-- [Azure Portal](https://portal.azure.com)
-- [Language Understanding using LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/)
-- [Channels and Bot Connector Service](https://docs.microsoft.com/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
+Le modèle LUIS ainsi que le bot framework sont déployés à partir des Git actoins.
