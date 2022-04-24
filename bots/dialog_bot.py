@@ -1,7 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-"""Implements bot Activity handler."""
-
 from botbuilder.core import (
     ActivityHandler,
     ConversationState,
@@ -10,19 +8,16 @@ from botbuilder.core import (
     BotTelemetryClient,
     NullTelemetryClient,
 )
-from botbuilder.dialogs import Dialog, DialogExtensions
 from helpers.dialog_helper import DialogHelper
-
+from botbuilder.dialogs import Dialog, DialogExtensions
 
 class DialogBot(ActivityHandler):
-    """Main activity handler for the bot."""
-
     def __init__(
         self,
         conversation_state: ConversationState,
         user_state: UserState,
         dialog: Dialog,
-        telemetry_client: BotTelemetryClient,
+        telemetry_client: BotTelemetryClient
     ):
         if conversation_state is None:
             raise Exception(
@@ -38,12 +33,8 @@ class DialogBot(ActivityHandler):
         self.dialog = dialog
         self.telemetry_client = telemetry_client
 
-    async def on_message_activity(self, turn_context: TurnContext):
-        # properties = {}
-        # properties["mainDialogUuid"] = self.dialog.uuid
-        # properties["text"] = turn_context.activity.text
-        # self.telemetry_client.track_event("messageActivity", properties)
 
+    async def on_message_activity(self, turn_context: TurnContext):
         await DialogExtensions.run_dialog(
             self.dialog,
             turn_context,
@@ -51,6 +42,14 @@ class DialogBot(ActivityHandler):
         )
 
         # Save any state changes that might have occured during the turn.
+#        await self.conversation_state.save_changes(turn_context, False)
+#        await self.user_state.save_changes(turn_context, False)
+
+
+    async def on_turn(self, turn_context: TurnContext):
+        await super().on_turn(turn_context)
+
+        # Save any state changes that might have occurred during the turn.
         await self.conversation_state.save_changes(turn_context, False)
         await self.user_state.save_changes(turn_context, False)
 

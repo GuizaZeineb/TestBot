@@ -5,7 +5,7 @@
   "body": [
     {
       "type": "Image",
-      "url": "https://drive.google.com/uc?id=145f8iXSmu1HTt-ot4-Mmoo03iq3JpwOE",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
       "size": "stretch"
     },
     {
@@ -13,7 +13,7 @@
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Welcome to Fly Me Bot!",
+      "text": "Welcome to Bot Framework!",
       "wrap": true,
       "maxLines": 0
     },
@@ -21,7 +21,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": "true",
-      "text": "Hi, I'm Fly Me virtual Bot and I'm here to help you to book a flight. Say 'Hi' to start!",
+      "text": "Now that you have successfully run your bot, follow the links in this Adaptive Card to expand your knowledge of Bot Framework.",
       "wrap": true,
       "maxLines": 0
     }
@@ -29,8 +29,18 @@
   "actions": [
     {
       "type": "Action.OpenUrl",
-      "title": "Get an overview of real-time flight",
-      "url": "https://www.flightradar24.com/"
+      "title": "Get an overview",
+      "url": "https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Ask a question",
+      "url": "https://stackoverflow.com/questions/tagged/botframework"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Learn how to deploy",
+      "url": "https://docs.microsoft.com/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-4.0"
     }
   ]
 }

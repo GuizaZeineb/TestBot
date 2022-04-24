@@ -5,14 +5,24 @@
 class BookingDetails:
     def __init__(
         self,
-        from_city: str = "",
-        to_city: str = "",
-        from_date: str = "",
-        to_date: str = "",
-        budget: str = ""
+        destination: str = None,
+        origin: str = None,
+ #       travel_date: str = None,
+        departure_date: str = None,
+        arrival_date: str = None,
+        budget: str = None ,
+        number: int = None,
+        units :str = None,
+        unsupported_airports=None,
     ):
-        self.from_city = from_city
-        self.to_city = to_city
-        self.from_date = from_date
-        self.to_date = to_date
-        self.budget = budget
+        #if unsupported_airports is None:
+        #    unsupported_airports = []
+        self.destination = destination
+        self.origin = origin
+        self.unsupported_airports = unsupported_airports
+#        self.travel_date = travel_date
+        self.departure_date = departure_date
+        self.arrival_date = arrival_date
+        self.budget = budget,
+        self.number = number,
+        self.units  = units
