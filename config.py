@@ -1,59 +1,25 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
-#_________________New Version takes into account the virtual environment  ______________
+"""Configuration for the bot."""
 
 import os
-from dotenv import load_dotenv
 
-""" Bot Configuration """
+from dotenv import load_dotenv
 
 
 class DefaultConfig:
-    """ Bot Configuration """
-    load_dotenv()
-#    PORT = 49332 # if using env
-    PORT = 3978  # if not using env
-    APP_ID = os.environ.get("MicrosoftAppId", "")
-    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
+    """Configuration for the bot."""
 
+    def __init__(self):
+        load_dotenv()
 
-    #_______________Nouveau Luis____________
-#    LUIS_APP_ID = os.environ.get("LuisAppId", "e2c9e12a-31f4-4956-a89f-cc3fd548865d") # Random
-    #LUIS_APP_ID = os.environ.get("LuisAppId", "9d603457-4956-484b-bcf6-ff2e6cd862b3")#Last good one
-    LUIS_APP_ID = os.environ.get("LuisAppId", "fe2ea595-12f7-494c-8737-bc881341be54")# very last one for insights
+        self.PORT = 8000 #3978
+        self.CHATBOT_BOT_ID = os.environ.get("CHATBOT_BOT_ID", "bce25a24-e082-44fe-85e6-74db2e3de6d4")
+        self.CHATBOT_BOT_PASSWORD = os.environ.get("CHATBOT_BOT_PASSWORD", "ga.7Q~khgL1bfX61t6wstqIsrvu7hfwBTzukw")
 
-#    LUIS_APP_ID = os.environ.get("LuisAppId", "af053a5d-6c77-4755-90a2-590d1044c0e6")
-
-# #   Authoring Resource
-    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "p10luisresource-authoring.cognitiveservices.azure.com/")
-    LUIS_API_KEY = os.environ.get("LuisAPIKey", "44680094d70f4b22bc6fb194086ee9f8")
-
-
-    APPINSIGHTS_INSTRUMENTATION_KEY = os.environ.get(
-        "AppInsightsInstrumentationKey", "428b9636-5fe0-4eaa-8d34-7a0dec6c8a5e"
-    )
-
-
-#   Prediction Resource
-#    LUIS_API_KEY = os.environ.get("LuisAPIKey", "5fc4ccbb7dc04aa094934613afb5f55f")
-#    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "p10luisresource.cognitiveservices.azure.com/")
-
-
-#Query = "book a flight on monday , march 28 from paris to london and return back on 30 march with 500£"
-#    travel on 30/03/2022 and return on 30/04/2022 from Paris to London with 600£     #
-#     fly to Geneva from Monaco on 30/03/2022 to 27/03/2022. It should cost less then -3000 €    #
-#     traveling to: Sydney from: Paris on: 2022-04-13 returning on: 2022-04-30 with a maximum budget of: 4000 Euro.   #
-
-
-
-# ##########     APP_Insights   #####
-# traces
-# | summarize count () by message
-# | render piechart
-
-# requests
-# | where success == false
-# | summarize failedCount=sum(itemCount), impactedUsers=dcount(user_Id) by operation_Name
-# | order by failedCount desc
+        self.LUIS_APP_ID = os.environ.get("LUIS_APP_ID", "cfde1d4c-2cf0-437c-98b9-cdfb6abdbecb")
+        self.LUIS_PRED_KEY = os.environ.get("LUIS_PRED_KEY", "6321abe2e88341ecab8981a107c87099")
+        self.LUIS_PRED_ENDPOINT = os.environ.get("LUIS_PRED_ENDPOINT", "https://p10luis.cognitiveservices.azure.com/")
+        
+        self.APPINSIGHTS_INSTRUMENTATIONKEY = os.environ.get("APPINSIGHTS_INSTRUMENTATIONKEY", "7a7bd8f1-6b2a-4ddd-9bd2-ef22e1fd5143")
