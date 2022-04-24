@@ -15,8 +15,8 @@ class DefaultConfig:
         load_dotenv()
 
         self.PORT = 8000 #3978
-        self.CHATBOT_BOT_ID = os.environ.get("CHATBOT_BOT_ID", "bce25a24-e082-44fe-85e6-74db2e3de6d4")
-        self.CHATBOT_BOT_PASSWORD = os.environ.get("CHATBOT_BOT_PASSWORD", "ga.7Q~khgL1bfX61t6wstqIsrvu7hfwBTzukw")
+        self.CHATBOT_BOT_ID = os.environ.get("CHATBOT_BOT_ID", "47a323f3-a682-469f-b0e5-b661fb64efd1")
+        self.CHATBOT_BOT_PASSWORD = os.environ.get("CHATBOT_BOT_PASSWORD", "8Jo8Q~tnPOoE64Mpf2sI6GDVeCC~8WH25hqT2ah1")
 
         self.LUIS_APP_ID = os.environ.get("LUIS_APP_ID", "cfde1d4c-2cf0-437c-98b9-cdfb6abdbecb")
         self.LUIS_PRED_KEY = os.environ.get("LUIS_PRED_KEY", "6321abe2e88341ecab8981a107c87099")
