@@ -5,14 +5,14 @@
 
 import os
 
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 
 class DefaultConfig:
     """Configuration for the bot."""
 
     def __init__(self):
-        load_dotenv()
+#        load_dotenv()
 
         self.PORT = 8000 #3978
         self.CHATBOT_BOT_ID = os.environ.get("CHATBOT_BOT_ID", "47a323f3-a682-469f-b0e5-b661fb64efd1")
