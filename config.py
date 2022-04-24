@@ -5,9 +5,6 @@
 
 import os
 
-#from dotenv import load_dotenv
-
-
 class DefaultConfig:
     """Configuration for the bot."""
 
